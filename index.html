@@ -64,15 +64,15 @@
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" target="_blank" rel="noopener">所有文章</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			<a q-on="click: openSlider(e, 'friends')" target="_blank" rel="noopener">友链</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" target="_blank" rel="noopener">关于我</a>
     			
             
 		</nav>
@@ -175,12 +175,12 @@
         <ul>
 <li>阅读本手册需要一定mxnet、gluon操作基础</li>
 <li>本文使用cpu训练代码</li>
-<li>本文github地址：<a href="https://github.com/zmkwjx/GluonTS-Learning-in-Action">https://github.com/zmkwjx/GluonTS-Learning-in-Action</a></li>
-<li>GluonTS官网地址：<a href="https://gluon-ts.mxnet.io">https://gluon-ts.mxnet.io</a></li>
+<li>本文github地址：<a href="https://github.com/zmkwjx/GluonTS-Learning-in-Action" target="_blank" rel="noopener">https://github.com/zmkwjx/GluonTS-Learning-in-Action</a></li>
+<li>GluonTS官网地址：<a href="https://gluon-ts.mxnet.io" target="_blank" rel="noopener">https://gluon-ts.mxnet.io</a></li>
 </ul>
 <h2 id="1、DeepAR介绍"><a href="#1、DeepAR介绍" class="headerlink" title="1、DeepAR介绍"></a>1、DeepAR介绍</h2><p>在GluonTS中，<strong>DeepAR实现了一种基于RNN的模型，使用自回归递归网络进行概率预测，是一种在大量相关时间序列上训练自回归递归网络模型的基础上，用于产生准确概率预测的方法</strong>。与最新技术相比，其准确性提高了15％左右。<br> 概率预测（即根据时间序列的过去来估计时间序列的未来的概率分布）是优化业务流程的关键因素。</p>
 <ul>
-<li>注意：此模型的代码与<a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html">SageMaker的DeepAR预测算法</a>背后的实现无关 </li>
+<li>注意：此模型的代码与<a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html" target="_blank" rel="noopener">SageMaker的DeepAR预测算法</a>背后的实现无关 </li>
 </ul>
         
           <a class="article-more-a" href="/2019/11/14/gluonts-learning-in-action-chapter2/#more">more >></a>
@@ -197,15 +197,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mxnet</a>
+        			<a target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">mxnet</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">GluonTS</a>
+        			<a target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">GluonTS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">DeepAR</a>
+        			<a target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">DeepAR</a>
         		</li>
       		
 		</ul>
@@ -240,7 +240,7 @@
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+            <a target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
                 <i class="icon-font icon-back"></i>
             </a>
             <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
@@ -279,22 +279,22 @@
         <ul>
 <li>阅读本手册需要一定mxnet、gluon操作基础</li>
 <li>本文使用cpu训练代码</li>
-<li>本文github地址：<a href="https://github.com/zmkwjx/GluonTS-Learning-in-Action">https://github.com/zmkwjx/GluonTS-Learning-in-Action</a></li>
-<li>GluonTS官网地址：<a href="https://gluon-ts.mxnet.io">https://gluon-ts.mxnet.io</a></li>
+<li>本文github地址：<a href="https://github.com/zmkwjx/GluonTS-Learning-in-Action" target="_blank" rel="noopener">https://github.com/zmkwjx/GluonTS-Learning-in-Action</a></li>
+<li>GluonTS官网地址：<a href="https://gluon-ts.mxnet.io" target="_blank" rel="noopener">https://gluon-ts.mxnet.io</a></li>
 </ul>
 <h2 id="1、环境以及安装"><a href="#1、环境以及安装" class="headerlink" title="1、环境以及安装"></a>1、环境以及安装</h2><p> <strong>1.1 本文开发环境</strong>：ubuntu16.04TS、python3.7<br> <strong>1.2 快速安装</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib numpy pandas pathlib</span><br><span class="line">pip install mxnet mxnet-mkl gluon gluonts</span><br></pre></td></tr></table></figure>
 
 <h2 id="2、训练程序"><a href="#2、训练程序" class="headerlink" title="2、训练程序"></a>2、训练程序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Third-party imports</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">from</span> gluonts.model <span class="keyword">import</span> deepar</span><br><span class="line"><span class="keyword">from</span> gluonts.dataset <span class="keyword">import</span> common</span><br><span class="line"><span class="keyword">from</span> gluonts.dataset.util <span class="keyword">import</span> to_pandas</span><br><span class="line"><span class="keyword">from</span> gluonts.model.predictor <span class="keyword">import</span> Predictor</span><br></pre></td></tr></table></figure>
 
-<p> <strong>2.1 加载训练数据</strong> <a href="https://raw.githubusercontent.com/numenta/NAB/master/data/realTweets/Twitter_volume_AMZN.csv">Twitter_volume_AMZN.csv</a></p>
+<p> <strong>2.1 加载训练数据</strong> <a href="https://raw.githubusercontent.com/numenta/NAB/master/data/realTweets/Twitter_volume_AMZN.csv" target="_blank" rel="noopener">Twitter_volume_AMZN.csv</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url  = <span class="string">"./data/Twitter_volume_AMZN.csv"</span></span><br><span class="line">df   = pd.read_csv(url, header=<span class="number">0</span>, index_col=<span class="number">0</span>)</span><br><span class="line">data = common.ListDataset([&#123;<span class="string">"start"</span>: df.index[<span class="number">0</span>],</span><br><span class="line">    <span class="string">"target"</span>: df.value[:<span class="string">"2015-04-23 00:00:00"</span>]&#125;], freq=<span class="string">"H"</span>)</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p><strong>pd.read_csv</strong> 将csv文件读入并转化为数据框形式</p>
 </li>
 <li><p><strong>common.ListDataset</strong> 加载训练数据</p>
-<p><strong>2.2  解读 <a href="https://gluon-ts.mxnet.io/api/gluonts/gluonts.dataset.common.html">ListDataset</a></strong></p>
+<p><strong>2.2  解读 <a href="https://gluon-ts.mxnet.io/api/gluonts/gluonts.dataset.common.html" target="_blank" rel="noopener">ListDataset</a></strong></p>
 </li>
 </ul>
 <blockquote>
@@ -324,15 +324,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mxnet</a>
+        			<a target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">mxnet</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">GluonTS</a>
+        			<a target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">GluonTS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">DeepAR</a>
+        			<a target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">DeepAR</a>
         		</li>
       		
 		</ul>
@@ -367,7 +367,7 @@
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+            <a target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
                 <i class="icon-font icon-back"></i>
             </a>
             <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
@@ -447,15 +447,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a target="_blank" rel="noopener" q-class="active:friends">友链</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a target="_blank" rel="noopener" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -476,15 +476,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mxnet</a>
+                <a target="_blank" rel="noopener" class="js-tag color1">mxnet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">GluonTS</a>
+                <a target="_blank" rel="noopener" class="js-tag color3">GluonTS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">DeepAR</a>
+                <a target="_blank" rel="noopener" class="js-tag color2">DeepAR</a>
               </li>
             
             <div class="clearfix"></div>
