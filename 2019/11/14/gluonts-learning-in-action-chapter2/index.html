@@ -6,22 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>MXNET之GluonTS学习手册：第一章《DeepAR模型初步尝试》 | ZMKWJX的博客</title>
+  <title>MXNET之GluonTS学习手册：第二章《DeepAR的输入/输出》 | ZMKWJX的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阅读本手册需要一定mxnet、gluon操作基础 本文使用cpu训练代码 本文github地址：https:&#x2F;&#x2F;github.com&#x2F;zmkwjx&#x2F;GluonTS-Learning-in-Action GluonTS官网地址：https:&#x2F;&#x2F;gluon-ts.mxnet.io  1、环境以及安装 1.1 本文开发环境：ubuntu16.04TS、python3.7 1.2 快速安装 12pip">
+  <meta name="description" content="阅读本手册需要一定mxnet、gluon操作基础 本文使用cpu训练代码 本文github地址：https:&#x2F;&#x2F;github.com&#x2F;zmkwjx&#x2F;GluonTS-Learning-in-Action GluonTS官网地址：https:&#x2F;&#x2F;gluon-ts.mxnet.io  1、DeepAR介绍在GluonTS中，DeepAR实现了一种基于RNN的模型，使用自回归递归网络进行概率预测，是一种">
 <meta name="keywords" content="mxnet,GluonTS,DeepAR">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MXNET之GluonTS学习手册：第一章《DeepAR模型初步尝试》">
-<meta property="og:url" content="&#x2F;&#x2F;litten.me&#x2F;2019&#x2F;11&#x2F;12&#x2F;gluonts-learning-in-action-chapter1&#x2F;index.html">
+<meta property="og:title" content="MXNET之GluonTS学习手册：第二章《DeepAR的输入&#x2F;输出》">
+<meta property="og:url" content="&#x2F;&#x2F;litten.me&#x2F;2019&#x2F;11&#x2F;14&#x2F;gluonts-learning-in-action-chapter2&#x2F;index.html">
 <meta property="og:site_name" content="ZMKWJX的博客">
-<meta property="og:description" content="阅读本手册需要一定mxnet、gluon操作基础 本文使用cpu训练代码 本文github地址：https:&#x2F;&#x2F;github.com&#x2F;zmkwjx&#x2F;GluonTS-Learning-in-Action GluonTS官网地址：https:&#x2F;&#x2F;gluon-ts.mxnet.io  1、环境以及安装 1.1 本文开发环境：ubuntu16.04TS、python3.7 1.2 快速安装 12pip">
+<meta property="og:description" content="阅读本手册需要一定mxnet、gluon操作基础 本文使用cpu训练代码 本文github地址：https:&#x2F;&#x2F;github.com&#x2F;zmkwjx&#x2F;GluonTS-Learning-in-Action GluonTS官网地址：https:&#x2F;&#x2F;gluon-ts.mxnet.io  1、DeepAR介绍在GluonTS中，DeepAR实现了一种基于RNN的模型，使用自回归递归网络进行概率预测，是一种">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191111110558818.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0NDYxNjAw,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191111111136105.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191111111159684.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0NDYxNjAw,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-14T08:37:06.636Z">
+<meta property="og:updated_time" content="2019-11-14T08:42:29.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191111110558818.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0NDYxNjAw,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="ZMKWJX的博客" type="application/atom+xml">
   
@@ -155,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-gluonts-learning-in-action-chapter1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-gluonts-learning-in-action-chapter2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      MXNET之GluonTS学习手册：第一章《DeepAR模型初步尝试》
+      MXNET之GluonTS学习手册：第二章《DeepAR的输入/输出》
     </h1>
   
 
         
-        <a href="/2019/11/12/gluonts-learning-in-action-chapter1/" class="archive-article-date">
-  	<time datetime="2019-11-12T03:02:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+        <a href="/2019/11/14/gluonts-learning-in-action-chapter2/" class="archive-article-date">
+  	<time datetime="2019-11-14T08:35:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-14</time>
 </a>
         
       </header>
@@ -181,69 +177,81 @@
 <li>本文github地址：<a href="https://github.com/zmkwjx/GluonTS-Learning-in-Action" target="_blank" rel="noopener">https://github.com/zmkwjx/GluonTS-Learning-in-Action</a></li>
 <li>GluonTS官网地址：<a href="https://gluon-ts.mxnet.io" target="_blank" rel="noopener">https://gluon-ts.mxnet.io</a></li>
 </ul>
-<h2 id="1、环境以及安装"><a href="#1、环境以及安装" class="headerlink" title="1、环境以及安装"></a>1、环境以及安装</h2><p> <strong>1.1 本文开发环境</strong>：ubuntu16.04TS、python3.7<br> <strong>1.2 快速安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib numpy pandas pathlib</span><br><span class="line">pip install mxnet mxnet-mkl gluon gluonts</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、训练程序"><a href="#2、训练程序" class="headerlink" title="2、训练程序"></a>2、训练程序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Third-party imports</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">from</span> gluonts.model <span class="keyword">import</span> deepar</span><br><span class="line"><span class="keyword">from</span> gluonts.dataset <span class="keyword">import</span> common</span><br><span class="line"><span class="keyword">from</span> gluonts.dataset.util <span class="keyword">import</span> to_pandas</span><br><span class="line"><span class="keyword">from</span> gluonts.model.predictor <span class="keyword">import</span> Predictor</span><br></pre></td></tr></table></figure>
-
-<p> <strong>2.1 加载训练数据</strong> <a href="https://raw.githubusercontent.com/numenta/NAB/master/data/realTweets/Twitter_volume_AMZN.csv" target="_blank" rel="noopener">Twitter_volume_AMZN.csv</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url  = <span class="string">"./data/Twitter_volume_AMZN.csv"</span></span><br><span class="line">df   = pd.read_csv(url, header=<span class="number">0</span>, index_col=<span class="number">0</span>)</span><br><span class="line">data = common.ListDataset([&#123;<span class="string">"start"</span>: df.index[<span class="number">0</span>],</span><br><span class="line">    <span class="string">"target"</span>: df.value[:<span class="string">"2015-04-23 00:00:00"</span>]&#125;], freq=<span class="string">"H"</span>)</span><br></pre></td></tr></table></figure>
-
+<h2 id="1、DeepAR介绍"><a href="#1、DeepAR介绍" class="headerlink" title="1、DeepAR介绍"></a>1、DeepAR介绍</h2><p>在GluonTS中，<strong>DeepAR实现了一种基于RNN的模型，使用自回归递归网络进行概率预测，是一种在大量相关时间序列上训练自回归递归网络模型的基础上，用于产生准确概率预测的方法</strong>。与最新技术相比，其准确性提高了15％左右。<br> 概率预测（即根据时间序列的过去来估计时间序列的未来的概率分布）是优化业务流程的关键因素。</p>
 <ul>
-<li><p><strong>pd.read_csv</strong> 将csv文件读入并转化为数据框形式</p>
-</li>
-<li><p><strong>common.ListDataset</strong> 加载训练数据</p>
-<p><strong>2.2  解读 <a href="https://gluon-ts.mxnet.io/api/gluonts/gluonts.dataset.common.html" target="_blank" rel="noopener">ListDataset</a></strong></p>
-</li>
-</ul>
-<blockquote>
-<p><strong><em>class gluonts.dataset.common.ListDataset(data_iter: Iterable[Dict[str, Any]], freq: str, one_dim_target: bool = True)</em></strong></p>
-</blockquote>
-<ul>
-<li><p><strong>data_iter：</strong> 可迭代对象产生数据集中的所有项目。每个项目都应该是一个将字符串映射到值的字典。例如：{“start”: “2014-09-07”, “target”: [0.1, 0.2]}</p>
-</li>
-<li><p><strong>freq：</strong> 时间序列中的观察频率。</p>
-</li>
-<li><p><strong>one_dim_target：</strong> 是否仅接受单变量目标时间序列。</p>
-<p><strong>2.3 训练现有模型</strong><br>GluonTS带有许多预先构建的模型。用户所需要做的就是配置一些超参数。现有模型专注于（但不限于）概率预测。概率预测是以概率分布的形式进行的预测，而不是简单的单点估计。</p>
-</li>
+<li>注意：此模型的代码与<a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html" target="_blank" rel="noopener">SageMaker的DeepAR预测算法</a>背后的实现无关 </li>
 </ul>
 <a id="more"></a>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">estimator = deepar.DeepAREstimator(freq=<span class="string">"H"</span>, prediction_length=<span class="number">24</span>)</span><br><span class="line">predictor = estimator.train(training_data=data)</span><br></pre></td></tr></table></figure>
-
+<h2 id="2、DeepAR的输入-输出"><a href="#2、DeepAR的输入-输出" class="headerlink" title="2、DeepAR的输入/输出"></a>2、DeepAR的输入/输出</h2><p>DeepAR支持两个数据通道。所需的train通道描述了训练数据集。可选test通道描述了算法用于训练后评估模型准确性的数据集。您可以采用JSON行格式提供训练和测试数据集。<br>指定训练和测试数据的路径时，可以指定一个文件或包含多个文件的目录，这些文件可以存储在子目录中。如果指定目录，则DeepAR会将目录中的所有文件用作相应通道的输入。默认情况下，DeepAR模型使用 <strong>.json文件</strong> 输入数据。</p>
 <ul>
-<li><p><strong>构造一个DeepAR网络、并进行训练</strong></p>
+<li><strong>载入数据集的方法</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 后面将对该方法进行介绍</span></span><br><span class="line">common.FileDataset(<span class="string">"此处填入训练数据文件夹的绝对路径"</span>, freq=<span class="string">"H"</span>)</span><br></pre></td></tr></table></figure>
+
+<p> <strong>2.1 输入数据字段格式</strong></p>
+<ul>
+<li><p><strong>start</strong> — 格式为 yyy-MM-DD HH:MM:SS 的字符串。开始时间戳不能包含时区信息。</p>
 </li>
-<li><p><strong>prediction_length：</strong> 需要预测的时间长度</p>
+<li><p><strong>target</strong> — 表示时间序列的浮点值或整数数组。您可以将丢失的值编码为null，或者在JSON中编码为”NAN”字符串：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"start"</span>: <span class="string">"2009-11-01 00:00:00"</span>, <span class="string">"target"</span>: [<span class="number">5</span>, <span class="string">"NAN"</span>, <span class="number">7</span>, <span class="number">12</span>]&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>training_data：</strong> 训练数据</p>
-<p><strong>2.4 预览训练结果</strong></p>
+<li><p><strong>feat_dynamic_real (可选)</strong> — 代表自定义要素时间序列（动态要素）向量的浮点值或整数数组。如果设置此字段，则所有记录必须具有相同数量的内部数组（相同数量的特征时间序列）。此外，每个内部数组必须具有与关联target值相同的长度 。例如，如果目标时间序列代表不同产品的需求，则feat_dynamic_real可能是布尔时间序列，它指示是否对特定产品应用了促销：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"start"</span>: ..., <span class="string">"target"</span>: [<span class="number">5</span>, <span class="string">"NAN"</span>, <span class="number">7</span>, <span class="number">12</span>], <span class="string">"dynamic_feat"</span>: [[<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]]&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>feat_static_cat (可选)</strong> — 可以用于对记录所属的组进行编码的分类特征数组。分类要素必须编码为基于0的正整数序列。例如，分类域{R，G，B}可以编码为{0，1，2}。来自每个分类域的所有值都必须在训练数据集中表示。</p>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> test_entry, forecast <span class="keyword">in</span> zip(train_data, predictor.predict(train_data)):</span><br><span class="line">    to_pandas(test_entry)[<span class="number">-60</span>:].plot(linewidth=<span class="number">2</span>)</span><br><span class="line">    forecast.plot(color=<span class="string">'g'</span>, prediction_intervals=[<span class="number">50.0</span>, <span class="number">90.0</span>])</span><br><span class="line">plt.grid(which=<span class="string">'both'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p> <strong>如果您使用JSON文件，则该文件必须为JSON Lines格式。例如：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"start"</span>: <span class="string">"2009-11-01 00:00:00"</span>, <span class="string">"target"</span>: [<span class="number">4.3</span>, <span class="string">"NaN"</span>, <span class="number">5.1</span>, ...], <span class="string">"feat_static_cat"</span>: [<span class="number">0</span>, <span class="number">1</span>], <span class="string">"feat_dynamic_real"</span>: [[<span class="number">1.1</span>, <span class="number">1.2</span>, <span class="number">0.5</span>, ...]]&#125;</span><br><span class="line">&#123;<span class="string">"start"</span>: <span class="string">"2012-01-30 00:00:00"</span>, <span class="string">"target"</span>: [<span class="number">1.0</span>, <span class="number">-5.0</span>, ...], <span class="string">"feat_static_cat"</span>: [<span class="number">2</span>, <span class="number">3</span>], <span class="string">"feat_dynamic_real"</span>: [[<span class="number">1.1</span>, <span class="number">2.05</span>, ...]]&#125;</span><br><span class="line">&#123;<span class="string">"start"</span>: <span class="string">"1999-01-30 00:00:00"</span>, <span class="string">"target"</span>: [<span class="number">2.0</span>, <span class="number">1.0</span>], <span class="string">"feat_static_cat"</span>: [<span class="number">1</span>, <span class="number">4</span>], <span class="string">"feat_dynamic_real"</span>: [[<span class="number">1.3</span>, <span class="number">0.4</span>]]&#125;</span><br></pre></td></tr></table></figure>
+<p>在此示例中，每个时间序列都有两个关联的分类特征和一个时间序列特征。</p>
+<p>如果对算法进行无条件训练，它将学习一个“全局”模型，该模型在推理时与目标时间序列的特定身份无关，并且只受其形状的约束。</p>
+<p>如果该模型以提供给每个时间序列的 feat_static_cat 和 feat_dynamic_real 特征数据为条件，则预测很可能受到具有相应 cat 特征的时间序列特征的影响。例如，如果 target 时间序列表示服装商品需求，则您可以关联一个二维 cat 向量，该向量在第一个组件中编码商品类型（例如，0 = 鞋子，1 = 连衣裙），在第二个组件中编码商品颜色（例如，0 = 红色，1 = 蓝色）。示例输入如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"start"</span>: ..., <span class="string">"target"</span>: ..., <span class="string">"feat_static_cat"</span>: [<span class="number">0</span>, <span class="number">0</span>], ... &#125; <span class="comment"># red shoes</span></span><br><span class="line">&#123; <span class="string">"start"</span>: ..., <span class="string">"target"</span>: ..., <span class="string">"feat_static_cat"</span>: [<span class="number">1</span>, <span class="number">1</span>], ... &#125; <span class="comment"># blue dress</span></span><br></pre></td></tr></table></figure>
+<p>在推导时，您可以请求预测其 feat_static_cat 值为在训练数据中观察到的 feat_static_cat 值的组合的目标，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"start"</span>: ..., <span class="string">"target"</span>: ..., <span class="string">"feat_static_cat"</span>: [<span class="number">0</span>, <span class="number">1</span>], ... &#125; <span class="comment"># blue shoes</span></span><br><span class="line">&#123; <span class="string">"start"</span>: ..., <span class="string">"target"</span>: ..., <span class="string">"feat_static_cat"</span>: [<span class="number">1</span>, <span class="number">0</span>], ... &#125; <span class="comment"># red dress</span></span><br></pre></td></tr></table></figure>
 
+<p> <strong>2.2 训练数据准则</strong></p>
 <ul>
-<li><p><strong>预测结果</strong><br><img src="https://img-blog.csdnimg.cn/20191111110558818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0NDYxNjAw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><strong>2.5 输出训练结果</strong></p>
-</li>
+<li>时间序列的开始时间和长度可以不同。例如，在营销工作中，产品通常在不同日期进入零售目录，因此，它们的起始日期自然会不同。但是，所有系列必须具有相同的频率、分类特征数量和动态特征数量。</li>
+<li>根据文件中时间序列的位置将训练文件随机排序。换而言之，时间序列在文件中以随机顺序出现。</li>
+<li>确保正确设置 <strong>start</strong> 字段。算法使用 <strong>start</strong> 时间戳来派生内部特征。</li>
+<li>如果您使用分类特征 (<strong>feat_static_cat</strong>)，则所有时间序列必须具有相同数量的分类特征。</li>
+<li>如果您的数据集包含 <strong>feat_dynamic_real</strong> 字段，则算法会自动使用该字段。所有时间序列必须具有相同数量的特征时间序列。每个特征时间序列中的时间点与目标中的时间点一一对应。此外，feat_dynamic_real 字段中的条目应具有与 target 相同的长度。如果已使用 <strong>feat_dynamic_real</strong> 字段训练模型，则必须提供此字段以进行推理。此外，每个特征必须具有提供的目标的长度加上 <strong>prediction_length</strong>。</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">prediction = next(predictor.predict(train_data))</span><br><span class="line">print(prediction.mean)</span><br><span class="line">prediction.plot(output_file=<span class="string">'graph.png'</span>)</span><br></pre></td></tr></table></figure>
-
+<p> <strong>2.3 加载路径中包含的JSON Lines文件的数据集</strong></p>
+<p> <strong>common.FileDataset</strong> 加载路径中包含的 <strong>JSON Lines</strong> 文件的数据集。</p>
+<blockquote>
+<p><strong><em>class gluonts.dataset.common.FileDataset(path: pathlib.Path, freq: str, one_dim_target: bool = True)</em></strong></p>
+</blockquote>
 <ul>
-<li><p><strong>OUT</strong><br><img src="https://img-blog.csdnimg.cn/20191111111136105.png" alt="在这里插入图片描述"><br>  <img src="https://img-blog.csdnimg.cn/20191111111159684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0NDYxNjAw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><strong>2.5 保存训练模型</strong></p>
-</li>
+<li><strong>path：</strong> 包含数据集文件的路径。每个文件都会被认作训练数据源，除了以”.”开头和”_SUCCESS”结尾的文件外。文件中的有效行可以是: {“start”: “2014-09-07”, “target”: [0.1, 0.2]}</li>
+<li><strong>freq：</strong> 时间序列中的观测频率</li>
+<li><strong>one_dim_target：</strong> 是否仅接受单变量目标时间序列</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">predictor.serialize(Path(<span class="string">"此处填入Model文件夹的绝对路径"</span>))</span><br></pre></td></tr></table></figure>
-
-<p> <strong>2.6 使用训练模型</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">predictor = Predictor.deserialize(Path(<span class="string">"此处填入Model文件夹的绝对路径"</span>))</span><br></pre></td></tr></table></figure>
-
+<p> <strong>2.4 构造DeepAR网络</strong></p>
+<blockquote>
+<p><strong><em>class gluonts.model.deepar.DeepAREstimator(freq: str, prediction_length: int, trainer: gluonts.trainer._base.Trainer = gluonts.trainer._base.Trainer(batch_size=32, clip_gradient=10.0, ctx=None, epochs=100, hybridize=True, init=”xavier”, learning_rate=0.001, learning_rate_decay_factor=0.5, minimum_learning_rate=5e-05, num_batches_per_epoch=50, patience=10, weight_decay=1e-08), context_length: Optional[int] = None, num_layers: int = 2, num_cells: int = 40, cell_type: str = ‘lstm’, dropout_rate: float = 0.1, use_feat_dynamic_real: bool = False, use_feat_static_cat: bool = False, use_feat_static_real: bool = False, cardinality: Optional[List[int]] = None, embedding_dimension: Optional[List[int]] = None, distr_output: gluonts.distribution.distribution_output.DistributionOutput = gluonts.distribution.student_t.StudentTOutput(), scaling: bool = True, lags_seq: Optional[List[int]] = None, time_features: Optional[List[gluonts.time_feature._base.TimeFeature]] = None, num_parallel_samples: int = 100)</em></strong></p>
+</blockquote>
 <ul>
-<li><strong>例子</strong></li>
+<li><strong>freq：</strong> 时间序列中的观测频率</li>
+<li><strong>prediction_length：</strong> 预测范围的长度</li>
+<li><strong>context_length：</strong> 在计算预测之前要为RNN展开的步骤数（默认值：None，在这种情况下，context_length = projection_length）</li>
+<li><strong>num_layers：</strong> RNN层数（默认值：2）</li>
+<li><strong>num_cells：</strong> 每层的RNN信元数（默认值：40）</li>
+<li><strong>cell_type：</strong> 要使用的循环单元格类型（可用：“ lstm”或“ gru”；默认值：“ lstm”）</li>
+<li><strong>dropout_rate：</strong> 辍学正则化参数（默认值：0.1）</li>
+<li><strong>use_feat_dynamic_real：</strong> 是否使用 feat_dynamic_real 数据中的字段（默认值：False）</li>
+<li><strong>use_feat_static_cat：</strong> 是否使用 feat_static_cat 数据中的字段（默认值：False）</li>
+<li><strong>use_feat_static_real：</strong> 是否使用 feat_static_real 数据中的字段（默认值：False）</li>
+<li><strong>cardinality：</strong> 每个分类特征的值数。如果 use_feat_static_cat == True，则必须设置（默认：None）</li>
+<li><strong>scaling：</strong> 是否自动缩放目标值（默认值：True）</li>
+<li><strong>lags_seq：</strong> 用作RNN输入的滞后目标值的索引（默认值：None，在这种情况下，将根据频率自动确定这些值）</li>
+<li><strong>time_features：</strong> 用作RNN输入的时间特征（默认值：None，在这种情况下，它们是根据频率自动确定的）</li>
+<li><strong>num_parallel_samples：</strong> 每个时间序列的评估样本数，以在推理期间增加并行度。这是一个不影响准确性的模型优化（默认值：100）</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">from</span> gluonts.dataset <span class="keyword">import</span> common</span><br><span class="line"><span class="keyword">from</span> gluonts.dataset.util <span class="keyword">import</span> to_pandas</span><br><span class="line"><span class="keyword">from</span> gluonts.model.predictor <span class="keyword">import</span> Predictor</span><br><span class="line"></span><br><span class="line">url = <span class="string">"./data/Twitter_volume_AMZN.csv"</span></span><br><span class="line">df = pd.read_csv(url, header=<span class="number">0</span>, index_col=<span class="number">0</span>)</span><br><span class="line">train_data = common.ListDataset([&#123;<span class="string">"start"</span>: df.index[<span class="number">0</span>],</span><br><span class="line">    <span class="string">"target"</span>: df.value[:<span class="string">"2015-04-23 00:00:00"</span>]&#125;],freq=<span class="string">"H"</span>)</span><br><span class="line">    </span><br><span class="line">predictor = Predictor.deserialize(Path(<span class="string">"此处填入Model文件夹的绝对路径"</span>))</span><br><span class="line">prediction = next(predictor.predict(train_data))</span><br><span class="line">print(prediction.mean)</span><br><span class="line">prediction.plot(output_file=<span class="string">'graph.png'</span>)</span><br></pre></td></tr></table></figure>
+<p> <strong>2.5 例子</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">train_data = common.FileDataset(<span class="string">"此处填入训练数据文件夹的绝对路径"</span>, freq=<span class="string">"H"</span>)</span><br><span class="line">test_data  = common.FileDataset(<span class="string">"此处填入需要预测数据文件夹的绝对路径"</span>, freq=<span class="string">"H"</span>)</span><br><span class="line"></span><br><span class="line">estimator = deepar.DeepAREstimator(</span><br><span class="line">    prediction_length=<span class="number">24</span>,</span><br><span class="line">    context_length=<span class="number">100</span>,</span><br><span class="line">    use_feat_static_cat=<span class="literal">True</span>,</span><br><span class="line">    use_feat_dynamic_real=<span class="literal">True</span>,</span><br><span class="line">    num_parallel_samples=<span class="number">100</span>,</span><br><span class="line">    cardinality=[<span class="number">2</span>,<span class="number">1</span>],</span><br><span class="line">    freq=<span class="string">"H"</span>,</span><br><span class="line">    trainer=Trainer(ctx=<span class="string">"cpu"</span>, epochs=<span class="number">200</span>, learning_rate=<span class="number">1e-3</span>)</span><br><span class="line">)</span><br><span class="line">predictor = estimator.train(training_data=train_data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> test_entry, forecast <span class="keyword">in</span> zip(test_data, predictor.predict(test_data)):</span><br><span class="line">    to_pandas(test_entry)[<span class="number">-100</span>:].plot(figsize=(<span class="number">12</span>, <span class="number">5</span>), linewidth=<span class="number">2</span>)</span><br><span class="line">    forecast.plot(color=<span class="string">'g'</span>, prediction_intervals=[<span class="number">50.0</span>, <span class="number">90.0</span>])</span><br><span class="line">plt.grid(which=<span class="string">'both'</span>)</span><br><span class="line">plt.legend([<span class="string">"past observations"</span>, <span class="string">"median prediction"</span>, <span class="string">"90% prediction interval"</span>, <span class="string">"50% prediction interval"</span>])</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">prediction = next(predictor.predict(test_data))</span><br><span class="line">print(prediction.mean)</span><br><span class="line">prediction.plot(output_file=<span class="string">'graph.png'</span>)</span><br></pre></td></tr></table></figure>
       
 
       
@@ -331,7 +339,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://litten.me/2019/11/12/gluonts-learning-in-action-chapter1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://litten.me/2019/11/14/gluonts-learning-in-action-chapter2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -345,15 +353,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/14/gluonts-learning-in-action-chapter2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          MXNET之GluonTS学习手册：第二章《DeepAR的输入/输出》
-        
-      </div>
-    </a>
   
+    <a href="/2019/11/12/gluonts-learning-in-action-chapter1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MXNET之GluonTS学习手册：第一章《DeepAR模型初步尝试》</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
